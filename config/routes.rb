@@ -2,6 +2,7 @@ Rails.application.routes.draw do
  
 
 
+  resources :mixes
   devise_for :users
 
   resources :users
