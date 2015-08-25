@@ -14,6 +14,9 @@ class MixesController < ApplicationController
   	redirect_to mixes_path
   end
 
+def destroy
+end
+
   private
 
   def mix_params

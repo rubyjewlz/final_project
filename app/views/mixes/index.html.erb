@@ -1,4 +1,24 @@
 <h1>Mix Index</h1>
-<% @mixes.each do |mix| %>
- <%= mix.title %>
+
+
+	<table>
+	<tr>
+		<th>Title</th>
+		<th>Description</th>
+		<th colspan="2"></th>
+	</tr>
+
+	<% @mixes.each do |mix| %>
+	<tr>
+		<td><%= mix.title %></td>
+		<td><%= mix.text %></td>
+		<td><%= link_to 'Show', mix_path(mix) %></td>
+		<td><%= link_to 'Edit', edit_mix_path(mix) %></td>
+		<td><%= link_to 'Delete', mix_path(mix),
+						method: :delete,
+						data: {confirm: 'Are you sure?'} %>
+		</td>
+	</tr>
 	<% end %>
+</table>
+<br>
