@@ -15,6 +15,9 @@ class MixesController < ApplicationController
   end
 
 def destroy
+	@mixes = Mix.find(params[:id])
+	@mixes.destroy
+	redirect_to mixes_path
 end
 
   private
