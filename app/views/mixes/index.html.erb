@@ -1,10 +1,12 @@
 <h1>Mix Index</h1>
-
-
+<%= link_to 'New Mix', new_mix_path %>
+<br>
+<br>
 	<table>
 	<tr>
 		<th>Title</th>
 		<th>Description</th>
+		<th>User</th>
 		<th colspan="2"></th>
 	</tr>
 
@@ -12,11 +14,17 @@
 	<tr>
 		<td><%= mix.title %></td>
 		<td><%= mix.text %></td>
+		<td><%= mix.user.email %></td>
 		<td><%= link_to 'Show', mix_path(mix) %></td>
 		<td><%= link_to 'Edit', edit_mix_path(mix) %></td>
-		<td><%= link_to 'Delete', mix_path(mix),
+
+		<td>
+			<% if current_user == mix.user %>
+
+				<%= link_to 'Delete', mix_path(mix),
 						method: :delete,
 						data: {confirm: 'Are you sure?'} %>
+			<% end %>
 		</td>
 	</tr>
 	<% end %>

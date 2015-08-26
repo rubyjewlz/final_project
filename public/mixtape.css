@@ -1,0 +1,14 @@
+table {
+	background-color: lightblue;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+body {
+	font-family: Arial;
+	background-color: #66CCFF;
+}
+
+h1 {
+	color: #0066CC;
+}
