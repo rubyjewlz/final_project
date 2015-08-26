@@ -1,0 +1,14 @@
+<h1>Track Index</h1>
+<table>
+	<tr>
+		<th>Title</th>
+		<th>User</th>
+		<th colspan="2"></th>
+	</tr>
+	<% @tracks.each do |track| %>
+	<tr>
+		<td><strong>URL:</strong></td>
+		<td><%= track.url %></td>
+	<% end %>
+	</tr>
+</table>

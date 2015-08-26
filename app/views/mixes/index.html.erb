@@ -1,5 +1,6 @@
 <h1>Mix Index</h1>
 <%= link_to 'New Mix', new_mix_path %>
+<%= link_to 'New Track', new_track_path %>
 <br>
 <br>
 	<table>
@@ -30,3 +31,6 @@
 	<% end %>
 </table>
 <br>
+<div id="youtube">
+	<%= youtube_embed 'https://www.youtube.com/watch?v=1CKenI4srLE' %>
+</div>
