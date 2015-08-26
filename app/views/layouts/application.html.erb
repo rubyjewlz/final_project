@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="mixtape.css">
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/mixtape_bootstrap.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
   <title>Mixtape</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -15,9 +19,11 @@
 
 	<p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
-
-<%= yield %>
+  <div class="container">
+		<%= yield %>
+	
 <br>
 <%= link_to 'Back', :back %>
+</div>
 </body>
 </html>

@@ -1,14 +1,23 @@
 <h1>Track Index</h1>
 <table>
 	<tr>
-		<th>Title</th>
-		<th>User</th>
+		<th>Track URL</th>
+		
 		<th colspan="2"></th>
 	</tr>
 	<% @tracks.each do |track| %>
 	<tr>
-		<td><strong>URL:</strong></td>
+		
 		<td><%= track.url %></td>
+
+		<td>
+			<% if current_user == track.user %>
+
+				<%= link_to 'Delete', track_path(track),
+						method: :delete,
+						data: {confirm: 'Are you sure?'} %>
+			<% end %>
+		</td>
 	<% end %>
 	</tr>
 </table>
