@@ -10,6 +10,7 @@ class MixesController < ApplicationController
 
 	def index
 		@mixes = Mix.all
+		@mix = Mix.new
 	end
 
   def create
