@@ -1,4 +1,5 @@
-<%= form_for @track do |f| %>
+<div class="col-md-1">
+	<%= form_for @track do |f| %>
 	<% if @track.errors.any? %>
 		<div id="error_explanation">
 			<h2>
@@ -12,16 +13,14 @@
 				<% end %>
 			</ul>
 		</div>
-<% end %>
+	<% end %>
 		<p>
 			<%= f.label :url %><br>
 			<%= f.text_field :url %>
 		</p>
-
-
 		<p>
 			<%= f.submit %>
 		</p>
-
-		<% end %>
-		<%= link_to 'Mix Index', mixes_path %>
+<% end %>
+<%= link_to 'Mix Index', mixes_path %>
+</div>

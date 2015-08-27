@@ -1,4 +1,6 @@
-<h1>Track Index</h1>
+<div class="teal">
+	<h1>Track Index</h1>
+	<%= link_to 'New Track', new_track_path %>
 <table>
 	<tr>
 		<th>Track URL</th>
@@ -6,10 +8,8 @@
 		<th colspan="2"></th>
 	</tr>
 	<% @tracks.each do |track| %>
-	<tr>
-		
+	<tr>	
 		<td><%= track.url %></td>
-
 		<td>
 			<% if current_user == track.user %>
 
@@ -21,3 +21,7 @@
 	<% end %>
 	</tr>
 </table>
+</div>
+<div class="teal">
+	<%= youtube_embed 'https://www.youtube.com/watch?v=1CKenI4srLE' %>
+</div>

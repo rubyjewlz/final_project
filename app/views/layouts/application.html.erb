@@ -1,29 +1,38 @@
 <!DOCTYPE html>
-<html>
-<head>
-	
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="/mixtape_bootstrap.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
-  <title>Mixtape</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-	<% if current_user %>
-	  Signed in as: <%= current_user.email %>
-		<%= link_to 'Sign Out', destroy_user_session_path,method: :delete %>
-	<% end %>
-
-	<p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-  <div class="container">
-		<%= yield %>
-	
-<br>
-<%= link_to 'Back', :back %>
-</div>
-</body>
+<html lang="en">
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="/mixtape_bootstrap.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	  <title>Mixtape</title>
+	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	  <%= csrf_meta_tags %>
+	</head>
+	<body>
+		<div class="container">
+	  	<div class="header">
+		<% if current_user %>
+		  Signed in as: 
+		  <%= current_user.email %>
+			<%= link_to 'Sign Out', 
+			destroy_user_session_path,method: :delete %>
+			<%= link_to 'Profile', users_path %>
+		<% end %>
+		<h1>We Reminisce Over You</h1>
+		<p class="notice">
+			<%= notice %>
+		</p>
+	  <p class="alert">
+	  	<%= alert %>
+	  </p>
+	  
+	  	</div>
+			<%= yield %>
+			</div>
+			<br>
+			<div id="back">
+				<%= link_to 'Back', :back %>
+			</div>
+	</body>
 </html>

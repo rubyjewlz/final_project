@@ -1,41 +1,38 @@
-<h1>Mix Index</h1>
-<%= link_to 'New Mix', new_mix_path %>
-<%= link_to 'New Track', new_track_path %>
-<%= link_to 'Track Index', tracks_path %>
-<br>
-<br>
-<div class="col-md-6">
+<div class="teal">
+	<h2>Mix Index</h2>
+		<%= link_to 'New Mix', new_mix_path %>
+		<%= link_to 'New Track', new_track_path %>
+		<%= link_to 'Track Index', tracks_path %>
+	<br>
+	<br>
 	<table>
-	<tr>
-		<th>Title</th>
-		<th>Description</th>
-		<th>User</th>
-		<th colspan="2"></th>
-	</tr>
-
-	<% @mixes.each do |mix| %>
-	<tr>
-		<td><%= mix.title %></td>
-		<td><%= mix.text %></td>
-		<td><%= mix.user.email %></td>
-		<td><%= link_to 'Show', mix_path(mix) %></td>
-		<td><%= link_to 'Edit', edit_mix_path(mix) %></td>
-
-		<td>
-			<% if current_user == mix.user %>
-
-				<%= link_to 'Delete', mix_path(mix),
-						method: :delete,
-						data: {confirm: 'Are you sure?'} %>
-			<% end %>
-		</td>
-	</tr>
-	<% end %>
-	</table>
+		<tr>
+			<th>Title</th>
+			<th>Description</th>
+			<th>User</th>
+			<th colspan="2"></th>
+		</tr>
+		<% @mixes.each do |mix| %>
+			<tr>
+				<td><%= mix.title %></td>
+				<td><%= mix.text %></td>
+				<td><%= mix.user.email %></td>
+				<td><%= link_to 'Show', mix_path(mix) %></td>
+				<td><%= link_to 'Edit', edit_mix_path(mix) %></td>
+				<td>
+					<% if current_user == mix.user %>
+					<%= link_to 'Delete', mix_path(mix),
+							method: :delete,
+							data: {confirm: 'Are you sure?'} %>
+					<% end %>
+				</td>
+			</tr>
+		<% end %>
+	</table>	
 </div>
 <br>
-<div class="col-md-6">
-<div id="youtube">
-	<%= youtube_embed 'https://www.youtube.com/watch?v=1CKenI4srLE' %>
-</div>
+<div class="teal">
+	<% @mixes.each do |mix| %>
+	<%= youtube_embed (mix.text) %>
+	<% end %>
 </div>

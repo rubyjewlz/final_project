@@ -23,6 +23,15 @@ def edit
 	@mix = Mix.find(params[:id])
 end
 
+def update
+		@mixes = Mix.find(params[:id])
+		if @mixes.update(mix_params)
+		redirect_to mixes_path
+	else
+		render 'edit'
+	end
+end
+
 def destroy
 	@mixes = Mix.find(params[:id])
 	if current_user.blank? or @mixes.user != current_user
