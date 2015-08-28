@@ -48,7 +48,6 @@ end
 
   def mix_params
     params.require(:mix).permit(:text, :title)
-
   end
 
 end

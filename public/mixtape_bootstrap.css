@@ -13,6 +13,10 @@ h1 {
 h2 {
   font-family: orbitron;
 }
+#home_png {
+  margin: 25%;
+  margin-top: 100px;
+}
 .sign_in {
   color: #CC6600;
   background-color: #8F4700;
@@ -36,8 +40,8 @@ h2 {
   border-radius: 5px;
   margin: 2px;
   display: inline-block;
-/*  margin: auto 2%;
-  margin-top: 20px;*/
+  margin: auto 2%;
+  margin-top: 20px;
 }
 #back {
   background-color: #00CC99;
@@ -47,17 +51,17 @@ h2 {
   margin-left: 25px;
   float: right;
 }
-/*.index {
-  background-color: #00CC99;
+.index {
+  background-color: #006666;
   padding: 5px;
   border-radius: 5px;
   margin: 2px;
-  display: inline-block;
+  /*display: inline-block;/**/
   margin: auto 2%;
   margin-top: 20px;
-}*/
+}
 tr {
-  /*display: inline-block;*/
+  display: inline-block;
   background-color: #00CC99;
   padding: 5px;
   border-radius: 5px;
