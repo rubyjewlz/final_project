@@ -1,5 +1,10 @@
 class MixesController < ApplicationController
 
+	def index
+		@mixes = Mix.all
+		@mix = Mix.new
+	end
+
 	def show
 		@mixes = Mix.find(params[:id])
 	end
@@ -8,30 +13,21 @@ class MixesController < ApplicationController
 		@mix = Mix.new
 	end
 
-	def index
-		@mixes = Mix.all
-		@mix = Mix.new
+	def edit
+	@mix = Mix.find(params[:id])
 	end
 
-  def create
-  	@mix = Mix.create(mix_params) #TODO
-  	@mix.user = current_user #depends on mix belongs_to :user in model
-  	@mix.save
-  	redirect_to mixes_path
-  end
+	def create
+	end
 
-def edit
-	@mix = Mix.find(params[:id])
-end
-
-def update
+	def update
 		@mixes = Mix.find(params[:id])
 		if @mixes.update(mix_params)
 		redirect_to mixes_path
-	else
+		else
 		render 'edit'
+		end
 	end
-end
 
 def destroy
 	@mixes = Mix.find(params[:id])

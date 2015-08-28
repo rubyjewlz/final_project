@@ -1,26 +1,24 @@
-<h2>Mix Index</h2>
-<div class="teal">
-	
+<h2>Testify:</h2>
+	<div class="teal">	
 	<%= form_for @mix do |f| %>
-	<p>
-		<!-- 	<%= f.label :title %>
+			<!-- 	<%= f.label :title %>
 			<br>
 			<%= f.text_field :title %>
-		</p>
-		<p> -->
-			<%= f.label :url %>
-			<br>
+			</p>
+			<p> -->
+<!-- 			<%= f.label :url %>
+			<br> -->
 			<%= f.text_area :text %>
-		</p>
-		<p>
+<br>
 			<%= f.submit %>
-		</p>
 		<% end %>
+	</div>
 	<!-- 	<%= link_to 'New Mix', new_mix_path %> -->
 	<!-- 	<%= link_to 'New Track', new_track_path %>
 		<%= link_to 'Track Index', tracks_path %> -->
 <!-- 	<br>
 	<br> -->
+	<div class="index">
 	<table>
 		<!-- <tr>
 			<th>Title</th>
@@ -30,19 +28,19 @@
 		</tr> -->
 		<% @mixes.each do |mix| %>
 			<tr>
-				<td><%= youtube_embed (mix.text) %></td>
-				<!-- <td><%= mix.title %></td>
-				<td><%= mix.text %></td>
-				<td><%= mix.user.email %></td> -->
-				<td><%= link_to 'Show', mix_path(mix) %></td>
-				<td><%= link_to 'Edit', edit_mix_path(mix) %></td>
-				<td>
+				<td><%= youtube_embed (mix.text) %><br>
+					<%= link_to 'Show', mix_path(mix) %>
+				<%= link_to 'Edit', edit_mix_path(mix) %>
+				
 					<% if current_user == mix.user %>
 					<%= link_to 'Delete', mix_path(mix),
 							method: :delete,
 							data: {confirm: 'Are you sure?'} %>
 					<% end %>
 				</td>
+				<!-- <td><%= mix.title %></td>
+				<td><%= mix.text %></td>
+				<td><%= mix.user.email %></td> -->
 			</tr>
 		<% end %>
 	</table>	

@@ -8,7 +8,7 @@ module MixesHelper
       youtube_id = $5
     end
 
-    tag = %Q{<iframe title="YouTube video player" width="426" height="240" src="http://www.youtube.com/embed/#{ youtube_id }" frameborder="0" allowfullscreen></iframe>}
+    tag = %Q{<iframe title="YouTube video player" width="200" height="112" src="http://www.youtube.com/embed/#{ youtube_id }" frameborder="0" allowfullscreen></iframe>}
     tag.html_safe
   end
 
