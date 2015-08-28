@@ -1,27 +1,35 @@
-<div class="teal">
-	<h1>Track Index</h1>
-	<%= link_to 'New Track', new_track_path %>
-<table>
-	<tr>
-		<th>Track URL</th>
-		
-		<th colspan="2"></th>
-	</tr>
-	<% @tracks.each do |track| %>
-	<tr>	
-		<td><%= track.url %></td>
-		<td>
-			<% if current_user == track.user %>
-
-				<%= link_to 'Delete', track_path(track),
-						method: :delete,
-						data: {confirm: 'Are you sure?'} %>
-			<% end %>
-		</td>
-	<% end %>
-	</tr>
-</table>
+<h2>Testify:</h2>
+	<div class="teal">	
+	<%= form_for @track do |f| %>
+			<%= f.label :url %>
+			<br> 
+			<%= f.text_area :url %>
+<br>
+			<%= f.submit %>
+		<% end %>
+	</div>
+	<div class="index">
+	<table>
+		<% @tracks.each do |track| %>
+			<tr>
+				<td><%= youtube_embed (track.url) %><br>
+          <input type="checkbox" class="track-checkbox" data-id="<%= track.id %>">
+					<%= link_to 'Show', track_path(track), style: 'url-decoration: none; color: #006666;' %>
+					<%= link_to 'Edit', edit_track_path(track), style: 'url-decoration: none; color: #006666;' %>
+					<% if current_user == track.user %>
+					<%= link_to 'Delete', track_path(track),
+							method: :delete,
+							data: {confirm: 'Are you sure?'}, style: 'url-decoration: none; color: #006666;' %>
+					<% end %>
+				</td>
+			</tr>
+		<% end %>
+	</table>	
 </div>
+<br>
 <!-- <div class="teal">
-	<%= youtube_embed 'https://www.youtube.com/watch?v=1CKenI4srLE' %>
-</div> -->
+	<% @tracks.each do |track| %>
+	<%= youtube_embed (track.url) %>
+	<% end %> -->
+</div>
+<%= link_to 'Save As Mix', '#', id: "save-mix", style: 'color: #00CC99; background-color: #006666; url-decoration: none; font-size: 25px; padding: 5px; border-radius: 5px;' %>

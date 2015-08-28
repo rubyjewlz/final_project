@@ -1,4 +1,19 @@
-<h1>Show Mix</h1>
-<%= youtube_embed (@mixes.text) %>
 
+<h1>Tracks</h1>
 
+<table>
+		<% @tracks.each do |track| %>
+			<tr>
+				<td><%= youtube_embed (track.url) %><br>
+          <input type="checkbox" class="track-checkbox" data-id="<%= track.id %>">
+					<%= link_to 'Show', track_path(track), style: 'url-decoration: none; color: #006666;' %>
+					<%= link_to 'Edit', edit_track_path(track), style: 'url-decoration: none; color: #006666;' %>
+					<% if current_user == track.user %>
+					<%= link_to 'Delete', track_path(track),
+							method: :delete,
+							data: {confirm: 'Are you sure?'}, style: 'url-decoration: none; color: #006666;' %>
+					<% end %>
+				</td>
+			</tr>
+		<% end %>
+	</table>
