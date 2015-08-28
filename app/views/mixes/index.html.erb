@@ -3,12 +3,12 @@
 	
 	<%= form_for @mix do |f| %>
 	<p>
-			<%= f.label :title %>
+		<!-- 	<%= f.label :title %>
 			<br>
 			<%= f.text_field :title %>
 		</p>
-		<p>
-			<%= f.label :text %>
+		<p> -->
+			<%= f.label :url %>
 			<br>
 			<%= f.text_area :text %>
 		</p>
@@ -21,18 +21,19 @@
 		<%= link_to 'Track Index', tracks_path %> -->
 <!-- 	<br>
 	<br> -->
-	<!-- <table>
-		<tr>
+	<table>
+		<!-- <tr>
 			<th>Title</th>
 			<th>Description</th>
 			<th>User</th>
 			<th colspan="2"></th>
-		</tr>
+		</tr> -->
 		<% @mixes.each do |mix| %>
 			<tr>
-				<td><%= mix.title %></td>
+				<td><%= youtube_embed (mix.text) %></td>
+				<!-- <td><%= mix.title %></td>
 				<td><%= mix.text %></td>
-				<td><%= mix.user.email %></td>
+				<td><%= mix.user.email %></td> -->
 				<td><%= link_to 'Show', mix_path(mix) %></td>
 				<td><%= link_to 'Edit', edit_mix_path(mix) %></td>
 				<td>
@@ -44,11 +45,11 @@
 				</td>
 			</tr>
 		<% end %>
-	</table>	 -->
+	</table>	
 </div>
 <br>
-<div class="teal">
+<!-- <div class="teal">
 	<% @mixes.each do |mix| %>
 	<%= youtube_embed (mix.text) %>
-	<% end %>
+	<% end %> -->
 </div>
