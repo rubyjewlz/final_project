@@ -1,13 +1,13 @@
 	<div class="teal">
-		<h2>Profile</h2>
-      <h3>Mixes </h3>
+		<% if current_user %>
+        <%= current_user.username %>
+    <% end %>
+      <h3>Mixes</h3>
       <ul>
         <% current_user.mixes.each do |mix| %>
-          <li><%= link_to 'Show', mix_path(mix) %></li>
+          <li><%= link_to 'MIX', mix_path(mix), style: 'text-decoration: none; color: #00CC99;' %></li>
         <% end %>
-       <ul>
-         <h3> All tracks </h3>
-			<%= link_to 'Track Index', tracks_path %>
-			<br>
+         <h3>All tracks </h3>
+			<%= link_to 'Track Index', tracks_path, style: 'text-decoration: none;' %>
+			<ul>
 </div>
-

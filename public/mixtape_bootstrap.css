@@ -2,6 +2,7 @@ body {
   	background-color: #FFCC66;
     font-family: Arial;
     margin: 0px;
+    text-decoration: none;
 }
 h1 {
   font-family: Orbitron;
@@ -13,7 +14,11 @@ h1 {
 h2 {
   font-family: orbitron;
 }
+h3 {
+  font-family: orbitron;
+}
 #home_png {
+  width: 50%;
   margin: 25%;
   margin-top: 100px;
 }
@@ -66,4 +71,15 @@ tr {
   padding: 5px;
   border-radius: 5px;
   margin: 2px;
+}
+li {
+  text-decoration: none;
+  list-style-type: none;
+  font-size: 20px;
+  padding: 5px;
+  background-color: #006666;
+  display: inline-block;
+  margin: 5px;
+  border-radius: 5px;
+
 }
