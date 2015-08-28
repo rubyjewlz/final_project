@@ -1,15 +1,7 @@
-<h2>Testify:</h2>
-	<div class="teal">	
-	<%= form_for @track do |f| %>
-			<%= f.label :url %>
-			<br> 
-			<%= f.text_area :url %>
-<br>
-			<%= f.submit %>
-		<% end %>
-	</div>
-	<div class="index">
-	<table>
+
+<h1>Tracks</h1>
+
+<table>
 		<% @tracks.each do |track| %>
 			<tr>
 				<td><%= youtube_embed (track.url) %><br>
@@ -24,12 +16,4 @@
 				</td>
 			</tr>
 		<% end %>
-	</table>	
-</div>
-<br>
-<!-- <div class="teal">
-	<% @tracks.each do |track| %>
-	<%= youtube_embed (track.url) %>
-	<% end %> -->
-</div>
-<%= link_to 'Save As Mix', '#', id: "save-mix", style: 'color: #00CC99; background-color: #006666; url-decoration: none; font-size: 25px; padding: 5px; border-radius: 5px;' %>
+	</table>

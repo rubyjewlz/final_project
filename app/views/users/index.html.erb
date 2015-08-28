@@ -1,5 +1,12 @@
 	<div class="teal">
 		<h2>Profile</h2>
+      <h3>Mixes </h3>
+      <ul>
+        <% current_user.mixes.each do |mix| %>
+          <li><%= link_to 'Show', mix_path(mix) %></li>
+        <% end %>
+       <ul>
+         <h3> All tracks </h3>
 			<%= link_to 'Track Index', tracks_path %>
 			<br>
 </div>

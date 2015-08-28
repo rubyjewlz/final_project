@@ -1,4 +1,5 @@
 class Track < ActiveRecord::Base
-	belongs_to :mix
+	has_many :mix_tracks
+  has_many :mixes, through: :mix_tracks
 	belongs_to :user
 end

@@ -6,7 +6,7 @@ class TracksController < ApplicationController
 	end
 
 	def show
-		@tracks = Track.find(params[:id])
+		@track = Track.find(params[:id])
 	end
 
 	def new
@@ -14,7 +14,7 @@ class TracksController < ApplicationController
 	end
 
 	def edit
-	@track = Track.find(params[:id])
+    @track = Track.find(params[:id])
 	end
 
 	def create
