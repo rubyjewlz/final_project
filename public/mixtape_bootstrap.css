@@ -57,7 +57,7 @@ h2 {
   margin-top: 20px;
 }*/
 tr {
-  display: inline-block;
+  /*display: inline-block;*/
   background-color: #00CC99;
   padding: 5px;
   border-radius: 5px;

@@ -4,7 +4,7 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="/mixtape_bootstrap.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-	  <title>Mixtape</title>
+	  <title>BDM</title>
 	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 	  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	  <%= csrf_meta_tags %>
@@ -18,14 +18,14 @@
 					  Signed in as: 
 					  <%= current_user.email %>
 						<%= link_to 'Sign Out', 
-						destroy_user_session_path,method: :delete %>
-						<%= link_to 'Profile', users_path %>
+						destroy_user_session_path,method: :delete, style: 'text-decoration: none; color:  #FFCC66;'   %>
+						<%= link_to 'Profile', users_path, style: 'text-decoration: none; color:  #FFCC66;' %>
 					<% end %>
 		</div>
 		<div id="back">
-			<%= link_to 'Back', :back %>
+			<%= link_to 'Back', :back, style: 'text-decoration: none; color:  #FFCC66;' %>
 		</div>
-		<h1>BLACK DEATH MIXTAPE</h1>
+		<h1>we reminisce over you</h1>
 		<p class="notice">
 			<%= notice %>
 		</p>

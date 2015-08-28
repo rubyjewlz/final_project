@@ -6,8 +6,8 @@
 			<%= f.text_field :title %>
 			</p>
 			<p> -->
-<!-- 			<%= f.label :url %>
-			<br> -->
+			<%= f.label :text %>
+			<br> 
 			<%= f.text_area :text %>
 <br>
 			<%= f.submit %>
@@ -30,8 +30,7 @@
 			<tr>
 				<td><%= youtube_embed (mix.text) %><br>
 					<%= link_to 'Show', mix_path(mix) %>
-				<%= link_to 'Edit', edit_mix_path(mix) %>
-				
+					<%= link_to 'Edit', edit_mix_path(mix) %>
 					<% if current_user == mix.user %>
 					<%= link_to 'Delete', mix_path(mix),
 							method: :delete,

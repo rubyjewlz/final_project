@@ -1,7 +1,7 @@
 class MixesController < ApplicationController
 
 	def index
-		@mixes = Mix.all
+		@mixes = Mix.order(created_at: :desc)
 		@mix = Mix.new
 	end
 
@@ -18,6 +18,10 @@ class MixesController < ApplicationController
 	end
 
 	def create
+		@mix = Mix.new(mix_params)
+		@mix.user = current_user
+		@mix.save
+		redirect_to mixes_path
 	end
 
 	def update
