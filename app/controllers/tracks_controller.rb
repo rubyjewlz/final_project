@@ -34,7 +34,7 @@ class TracksController < ApplicationController
 	end
 
 def destroy
-	@track = track.find(params[:id])
+	@track = Track.find(params[:id])
 	if current_user.blank? or @track.user != current_user
 		flash[:alert] = 'unauthorized deletion attempt'
 		redirect_to tracks_path

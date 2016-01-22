@@ -37,5 +37,10 @@
 			<%= yield %>
 		</div>
 		<br>
+		<div class="footer">
+			<% if current_user %>
+				<%= link_to 'Save As Mix', '#', id: "save-mix", style: 'color: #00CC99; background-color: #006666; url-decoration: none; font-size: 25px; padding: 5px; border-radius: 5px;' %>
+				<% end %>
+			</div>
 	</body>
 </html>

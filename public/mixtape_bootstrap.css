@@ -17,6 +17,9 @@ h2 {
 h3 {
   font-family: orbitron;
 }
+img {
+  width: 580px;
+}
 #home_png {
   width: 50%;
   margin: 25%;
@@ -38,6 +41,11 @@ h3 {
   height: 150px;
   margin: auto none 0px;
   background-color: #CC6600;
+}
+.footer {
+  height: 150px;
+  margin: auto none 0px;
+  background-color: #8F4700;
 }
 .teal {
   background-color: #00CC99;

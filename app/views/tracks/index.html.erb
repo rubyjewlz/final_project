@@ -1,4 +1,4 @@
-<h2>Testify:</h2>
+<!-- <h2>Testify:</h2> -->
 	<div class="teal">	
 	<%= form_for @track do |f| %>
 			<%= f.label :url %>
@@ -31,5 +31,5 @@
 	<% @tracks.each do |track| %>
 	<%= youtube_embed (track.url) %>
 	<% end %> -->
-</div>
 <%= link_to 'Save As Mix', '#', id: "save-mix", style: 'color: #00CC99; background-color: #006666; url-decoration: none; font-size: 25px; padding: 5px; border-radius: 5px;' %>
+</div>
